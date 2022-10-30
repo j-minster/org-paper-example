@@ -1,0 +1,20 @@
+#+latex: \definecolor{bg}{rgb}{0.95,0.95,0.95}
+#+bibliography: fyp.bib
+#+cite_export: csl ./monash-university-harvard.csl
+#+latex_header: \usepackage{siunitx}[=v3]
+#+latex_header: \usepackage{xcolor,lipsum}
+#+latex_header: \usepackage{enumitem}  % See https://www.ctan.org/pkg/enumitem
+#+latex_header: \newlist{mydescription}{description}{1}
+#+latex_header: \setlist[description]{style=nextline, font=\color{red}\bfseries, labelindent=1cm, leftmargin =2cm, rightmargin=1cm, topsep     =3ex}
+#+latex_header: \usepackage[cache=false]{minted}
+#+latex_header: \hypersetup{frenchlinks=true}
+#+latex_header: \hypersetup{hidelinks}
+#+latex_header: \usepackage{siunitx}[=v3]
+#+latex_header: \sisetup{mode=text,range-phrase = {\text{~to~}}}
+#+latex_header: \usepackage{titlesec}
+#+latex_header: \setcounter{secnumdepth}{5}
+#+latex_header: \titleformat{\paragraph}
+#+latex_header: {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+#+latex_header: \titlespacing*{\paragraph}
+#+latex_header: {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+#+latex_header: \usepackage{textcomp}

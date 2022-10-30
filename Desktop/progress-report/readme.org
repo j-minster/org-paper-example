@@ -1,0 +1,37 @@
+#+title: README
++ My undergraduate final-year project report
++ Posting to demonstrate some org capabilities
++ I run doom emacs, and export the =results.org= file with =SPC m e l o= (or =org-export-dispatch=) to generate a pdf with LaTeX
++ Relevant parts of my config (doom):
+
+#+begin_src emacs-lisp
+;; TODO: tidy this up one day
+(use-package! ox-latex
+  :config
+  (add-to-list 'org-latex-packages-alist '("=v3" "siunitx" t))
+  (add-to-list 'org-latex-packages-alist '("" "cleveref" t))
+  (add-to-list 'org-latex-packages-alist '("" "minted"))
+  (add-to-list 'org-latex-packages-alist '("margin=3cm" "geometry" nil))
+  (add-to-list 'org-latex-packages-alist '("" "siunitx" t))
+  (add-to-list 'org-latex-minted-langs '(ipython "python"))
+  (add-to-list 'org-latex-minted-langs '(jupyter-python "python"))
+  (add-to-list 'org-latex-minted-langs '(jupyter-apl "apl"))
+  (add-to-list 'org-latex-minted-langs '(python "python"))
+  (add-to-list 'org-latex-minted-langs '(matlab "matlab"))
+  (add-to-list 'org-latex-minted-langs '(julia "julia"))
+  (add-to-list 'org-latex-minted-langs '(jupyter-julia "julia"))
+  (add-to-list 'org-latex-minted-langs '(sh "bash"))
+  (add-to-list 'org-latex-minted-langs '(xml "xml"))
+  (add-to-list 'org-latex-minted-langs '(xml "xml"))
+  (add-to-list 'org-latex-minted-langs '(r "r"))
+  (add-to-list 'org-latex-minted-langs '(java "java"))
+  (setq org-latex-listings 'minted)
+  (setq org-latex-minted-options
+        '(("bgcolor" "bg") ("frame" "lines") ("linenos=true") ("breaklines=true") ("firstnumber=last")))
+
+  (setq org-latex-pdf-process
+        '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+          "bibtex %b"
+          "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+          "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f")))
+#+end_src
